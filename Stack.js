@@ -1,12 +1,10 @@
+'use strict';
+
 /**
  * Stack data structure using only a String to store data
  */
 class Stack {
 
-    /**
-     * [constructor description]
-     * @return {[type]} [description]
-     */
     constructor() {
         this.storage = '';
         this.delimiter = ':';
@@ -36,19 +34,4 @@ class Stack {
     }
 }
 
-// @TODO: Move below to jasmine test
-let myDinnerMenu = new Stack();
-
-myDinnerMenu.push('tacos');
-myDinnerMenu.push('pizza');
-myDinnerMenu.push('eggs');
-
-console.log(myDinnerMenu.storage);
-console.log('size: ', myDinnerMenu.size());
-
-let myPoppedValue = myDinnerMenu.pop();
-
-console.log('popped value ->', myPoppedValue);
-
-console.log(myDinnerMenu.storage);
-console.log('size: ', myDinnerMenu.size());
+module.exports = Stack;
