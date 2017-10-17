@@ -12,7 +12,7 @@ class Queue {
 
     /**
      * Adds value to back of queue
-     * @param  {any} value Value to add to queue
+     * @param  {any} value    Value to add to queue
      * @return {number}       Size of queue
      */
     enqueue(value) {
