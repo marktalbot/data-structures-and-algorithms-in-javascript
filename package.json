@@ -4,11 +4,14 @@
   "description": "",
   "main": "Stack.js",
   "scripts": {
-    "test": "ava --verbose"
+    "test": "ava --verbose",
+    "lint": "eslint *.js",
+    "build": "npm run test && npm run lint"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "ava": "^0.22.0"
+    "ava": "^0.22.0",
+    "eslint": "^4.9.0"
   }
 }
