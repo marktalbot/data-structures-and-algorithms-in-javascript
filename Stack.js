@@ -4,7 +4,6 @@
  * Stack data structure using only a String to store data
  */
 class Stack {
-
     constructor() {
         this.storage = '';
         this.delimiter = ':';

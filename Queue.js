@@ -4,7 +4,6 @@
  * Queue data structure using only an object
  */
 class Queue {
-
     constructor() {
         this.storage = {};
         this.counter = 0;
