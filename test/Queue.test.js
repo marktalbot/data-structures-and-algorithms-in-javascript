@@ -3,7 +3,7 @@ import Queue from '../Queue.js';
 
 let queue;
 
-test.beforeEach(t => {
+test.beforeEach(() => {
     queue = new Queue();
 });
 

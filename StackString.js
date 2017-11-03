@@ -23,7 +23,7 @@ class Stack {
 
     size() {
         let size = 0;
-        for (var i = this.storage.length - 1; i >= 0; i--) {
+        for (let i = this.storage.length - 1; i >= 0; i--) {
             if (this.storage[i] === this.delimiter) {
                 size++;
             }

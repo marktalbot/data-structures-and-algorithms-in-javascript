@@ -1,9 +1,9 @@
 import test from 'ava';
-import Stack from '../Stack.js';
+import Stack from '../StackString.js';
 
 let stack;
 
-test.beforeEach(t => {
+test.beforeEach(() => {
     stack = new Stack();
 });
 
