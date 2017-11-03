@@ -3,7 +3,7 @@
 /**
  * Stack data structure using only a String to store data
  */
-class Stack {
+class StackString {
     constructor() {
         this.storage = '';
         this.delimiter = ':';
@@ -33,4 +33,4 @@ class Stack {
     }
 }
 
-module.exports = Stack;
+module.exports = StackString;
