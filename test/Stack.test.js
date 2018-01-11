@@ -68,3 +68,28 @@ test('Peek does not remove an item from the stack', t => {
 
     t.is(stack.count(), 3);
 });
+
+test('Returns error message when adding another item once max capacity is reached', t => {
+    // Max capacity is set to 5
+    stack.push('item1');
+    stack.push('item2');
+    stack.push('item3');
+    stack.push('item4');
+    stack.push('item5');
+
+    t.is(stack.count(), 5);
+    t.is(stack.push('item6'), 'Max capacity already reached. Remove element before adding a new one.');
+    t.is(stack.count(), 5);
+});
+
+test('Does not add another item if max capacity is reached', t => {
+    // Max capacity is set to 5
+    stack.push('item1');
+    stack.push('item2');
+    stack.push('item3');
+    stack.push('item4');
+    stack.push('item5');
+
+    stack.push('item6');
+    t.is(stack.count(), 5);
+});
