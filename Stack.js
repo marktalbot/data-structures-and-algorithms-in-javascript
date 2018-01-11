@@ -21,14 +21,17 @@ class Stack {
         if (keys.length === 0) {
             return null;
         }
-        let lastKeyAdded = keys.sort((a, b) => b - a)[0];
+        let lastKeyAdded = this._getLastKeyAdded();
         let lastElementAdded = this.storage[lastKeyAdded];
         delete this.storage[lastKeyAdded];
 
         return lastElementAdded;
     }
 
-    peek() {}
+    peek() {
+        let lastKeyAdded = this._getLastKeyAdded();
+        return this.storage[lastKeyAdded];
+    }
 
     count() {
         return Object.keys(this.storage).length;
@@ -36,6 +39,16 @@ class Stack {
 
     incrementCounter() {
         this.counter++;
+    }
+
+    _getLastKeyAdded() {
+        let keys = Object.keys(this.storage);
+
+        if (keys.length === 0) {
+            return null;
+        }
+
+        return keys.sort((a, b) => b - a)[0];
     }
 }
 

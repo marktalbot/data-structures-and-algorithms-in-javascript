@@ -50,3 +50,21 @@ test('Returns null if you try to pop but no items exist', t => {
     stack.pop();
     t.is(stack.pop(), null);
 });
+
+test('It can peek at the last item in the stack', t => {
+    stack.push('itemX');
+    stack.push('itemY');
+    stack.push('itemZ');
+
+    t.is(stack.peek(), 'itemZ');
+});
+
+test('Peek does not remove an item from the stack', t => {
+    stack.push('itemX');
+    stack.push('itemY');
+    stack.push('itemZ');
+
+    stack.peek();
+
+    t.is(stack.count(), 3);
+});
