@@ -93,3 +93,39 @@ test('Does not add another item if max capacity is reached', t => {
     stack.push('item6');
     t.is(stack.count(), 5);
 });
+
+test('It returns true if value is contained within stack', t => {
+    stack.push('itemX');
+    stack.push('itemY');
+    stack.push('itemZ');
+
+    t.is(stack.contains('itemY'), true);
+});
+
+test('It returns false if value is not contained within stack', t => {
+    stack.push('itemX');
+    stack.push('itemY');
+    stack.push('itemZ');
+
+    t.is(stack.contains('something else'), false);
+});
+
+test('It gets the number of pops until reaching a specfic value', t => {
+    stack.push('A');
+    stack.push('B');
+    stack.push('C');
+    stack.push('X');
+    stack.push('Y');
+
+    t.is(stack.until('C'), 3);
+});
+
+test('It returns an error message when calling "until" if a specfic value is not present', t => {
+    stack.push('A');
+    stack.push('B');
+    stack.push('C');
+    stack.push('X');
+    stack.push('Y');
+
+    t.is(stack.until('something'), 'Value not found');
+});
