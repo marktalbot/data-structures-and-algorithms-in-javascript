@@ -53,11 +53,15 @@ class Stack {
         let values = this._getValues().reverse();
         let indexOfValue = values.indexOf(value);
 
-        if (indexOfValue === INDEX_NOT_FOUND) {
+        if (this._valueNotFound(indexOfValue)) {
             return 'Value not found';
         }
 
         return indexOfValue + ZERO_BASED_INDEX_OFFSET;
+    }
+
+    _valueNotFound(index) {
+        return index === INDEX_NOT_FOUND;
     }
 
     _incrementCounter() {
