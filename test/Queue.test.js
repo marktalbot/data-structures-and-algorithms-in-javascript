@@ -48,3 +48,13 @@ test('It can dequeue an item from the front of the queue and return it', t => {
     t.is(queue.dequeue(), 'item1');
     t.is(queue.size(), 2);
 });
+
+test('It can peek to return the item from the front of the queue without deleting it', t => {
+    queue.enqueue('item1');
+    queue.enqueue('item2');
+    queue.enqueue('item3');
+
+    t.is(queue.size(), 3);
+    t.is(queue.peek(), 'item1');
+    t.is(queue.size(), 3);
+});

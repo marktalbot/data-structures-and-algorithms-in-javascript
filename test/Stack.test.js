@@ -129,3 +129,13 @@ test('It returns an error message when calling "until" if a specfic value is not
 
     t.is(stack.until('something'), 'Value not found');
 });
+
+test('It returns the minimum item in the stack (numeric values only)', t => {
+    stack.push(5);
+    stack.push(111);
+    stack.push(2);
+    stack.push(12);
+    stack.push(4);
+
+    t.is(stack.min(), 2);
+});

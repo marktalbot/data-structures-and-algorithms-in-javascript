@@ -21,6 +21,8 @@ class Stack {
 
         this.storage[this.counter] = value;
         this._incrementCounter();
+
+        return this.count();
     }
 
     pop() {
@@ -41,6 +43,14 @@ class Stack {
 
     count() {
         return this._getKeys().length;
+    }
+
+    min() {
+        return this._getValues().sort((a , b) => a - b)[0];
+    }
+
+    sort() {
+        // Sort a stack so that its elements are in ascending order
     }
 
     contains(value) {

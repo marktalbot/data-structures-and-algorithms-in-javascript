@@ -34,6 +34,17 @@ class Queue {
         return value;
     }
 
+    peek() {
+        let index = Object.keys(this.storage)[0];
+        let value = this.storage[index];
+
+        return value;
+    }
+
+    count() {
+        // number of elements in queue
+    }
+
     /**
      * Returns size of queue
      * @return {number} Size of queue
