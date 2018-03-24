@@ -12,6 +12,7 @@ class Stack {
         this.capacity = capacity;
         this.counter = 0;
         this.storage = {};
+        this._minStack = [];
     }
 
     push(value) {
@@ -21,6 +22,12 @@ class Stack {
 
         this.storage[this.counter] = value;
         this._incrementCounter();
+
+        if (this._valueIsLowest(value)) {
+            this._pushToMinStack(value);
+        } else {
+            this._pushToMinStack(this.min());
+        }
 
         return this.count();
     }
@@ -46,7 +53,7 @@ class Stack {
     }
 
     min() {
-        return this._getValues().sort((a , b) => a - b)[0];
+        return this._minStack[this._minStack.length - 1];
     }
 
     sort() {
@@ -68,6 +75,17 @@ class Stack {
         }
 
         return indexOfValue + ZERO_BASED_INDEX_OFFSET;
+    }
+
+    _valueIsLowest(value) {
+        if (this._minStack.length === 0) {
+            return true;
+        }
+        return value < this._minStack[this._minStack.length - 1];
+    }
+
+    _pushToMinStack(value) {
+        this._minStack.push(value);
     }
 
     _valueNotFound(index) {
